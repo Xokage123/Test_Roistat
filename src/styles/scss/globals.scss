@@ -6,6 +6,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 a {
   cursor: pointer;
   color: inherit;
@@ -23,6 +29,10 @@ nav {
 
 * {
   box-sizing: border-box;
+}
+
+.error {
+  color: red;
 }
 
 ul {

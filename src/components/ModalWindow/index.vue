@@ -1,26 +1,13 @@
 <template>
-  <button @click="openModalHandler">Добавить пользователя</button>
-
   <teleport to="body">
-    <div v-if="isOpenModal" class="modal__mask">
+    <div v-if="isOpen" class="modal__mask">
       <div class="modal__wrapper">
         <div class="modal__container">
-          <button @click="closeModalHandler" class="modal__close">
+          <button @click="closeHandler" class="modal__close">
             <CloseIcon />
           </button>
-          <div class="modal__header">
-            <h2>Добавить пользователя</h2>
-          </div>
-
           <div class="modal__body">
-            <p>Основной контент</p>
-          </div>
-
-          <div class="modal__footer">
-            <p>Подвал</p>
-            <button class="modal-default-button" @click="closeModalHandler">
-              OK
-            </button>
+            <slot></slot>
           </div>
         </div>
       </div>
@@ -29,33 +16,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 
 import CloseIcon from "@/assets/icons/Close.vue";
 
 export default defineComponent({
+  name: "ModalComponent",
   components: {
     CloseIcon,
   },
-  setup: () => {
-    console.log("Ghbdtn");
-
-    const isOpenModal = ref<boolean>(false);
-
-    const openModalHandler = () => {
-      isOpenModal.value = true;
-    };
-
-    const closeModalHandler = () => {
-      isOpenModal.value = false;
-    };
-
-    return {
-      isOpenModal,
-      openModalHandler,
-      closeModalHandler,
-    };
-  },
+  props: ["isOpen", "closeHandler", "openHandler"],
 });
 </script>
 
