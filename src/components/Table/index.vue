@@ -1,5 +1,5 @@
 <template>
-  <table ce class="table">
+  <table v-if="listUsers.length" class="table">
     <thead>
       <tr class="table__row">
         <th @click="sortListUsersByName" class="table__cell table__cell-header">
@@ -23,6 +23,7 @@
       </tr>
     </tbody>
   </table>
+  <span v-else>Пользователей пока нет! Добавьте первого пользователя!!</span>
 </template>
 
 <script lang="ts">

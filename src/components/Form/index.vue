@@ -116,7 +116,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .form {
   display: flex;
-  max-width: 50%;
   flex-direction: column;
   gap: 20px;
 

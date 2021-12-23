@@ -49,7 +49,7 @@ export default defineComponent({
 
   &__container {
     position: relative;
-    max-width: 800px;
+    max-width: 400px;
     width: 100%;
     margin: 0px auto;
     padding: 20px;
